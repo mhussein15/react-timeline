@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./Components/Header.jsx";
+import Timeline from "./Components/Timeline";
+import { GlobalStyles } from "./styles";
+import { ThemeProvider } from "styled-components";
+import Footer from "./Components/Footer"
+
+import "react-vertical-timeline-component/style.min.css";
+
+const theme = {
+  textColor: "#f5f6fa",
+  backgroudColorYellow: "#FCBB6D",
+  backgroudColorRedish: "#D8737F",
+  iconColor: "#D8737F",
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <Header />
+      <Timeline />
+      <Footer/>
+    </ThemeProvider>
   );
 }
 
